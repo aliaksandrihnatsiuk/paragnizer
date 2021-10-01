@@ -83,11 +83,11 @@ def get_par(pdf_path, page_n, h=H, w=W, ):
 
 
 if __name__ == '__main__':
-    pdf_path = '/pdf/XTX Execution Services_Terms of Business_September 2020.pdf'
+    pdf_path = '/home/user/PycharmProjects/paragnizer/XTX Execution Services_Terms of Business_September 2020.pdf'
 
     bboxes, img_text, df_s, rgb_im = get_par(pdf_path, 1)
 
-    def (bboxes):
+    def number_red_pixels(bboxes):
         list_red_pixels = []
         for i in range(len(bboxes)):
             occurrences = np.count_nonzero(img_text[bboxes[i][1]:bboxes[i][3], bboxes[i][0]:bboxes[i][2]] == 83)

@@ -372,7 +372,7 @@ def get_par_from_bbox(bboxes, words, h=H, w=W):
 
 
 if __name__ == '__main__':
-    pdf_path = '/home/user/PycharmProjects/paragnizer/pdf/XTX Execution Services_Terms of Business_September 2020.pdf'
+    pdf_path = '/XTX Execution Services_Terms of Business_September 2020.pdf'
     # pdf_path = '/home/andrei/MySpace/python/Define/pdf/06.pdf'
     bboxes, img_text, df_s, rgb_im = get_par(pdf_path, 4)
     print(df_s)
