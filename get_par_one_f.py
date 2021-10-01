@@ -10,6 +10,7 @@ import pandas as pd
 import ctypes
 import matplotlib
 import matplotlib.pyplot as plt
+from docx import Document
 
 
 from get_par import convert_from_path, get_par_from_bbox
@@ -108,7 +109,13 @@ if __name__ == '__main__':
     print(df.head(10))
 
 
-    #ax[0].imshow(img_text, 'gray')
-    #cv2.imshow('rgb_im', rgb_im)
-    #plt.show()
-    #cv2.waitKey(0)
+    # Finding Strike and  words
+    document = Document(r'/home/user/PycharmProjects/paragnizer/pdf/XTX Execution Services_Terms of Business_September 2020.docx')
+    for p in document.paragraphs:
+        for run in p.runs:
+            if run.font.strike:
+                print("STRIKE TEXT: " + run.text)
+            if run.font.underline:
+                print("UNDERLINE TEXT: " + run.text)
+
+
